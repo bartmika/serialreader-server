@@ -7,25 +7,14 @@ package proto;
 import "google/protobuf/timestamp.proto";
 
 service SerialReader {
-    rpc SayHello (HelloRequest) returns (HelloReply) {}
     rpc GetSparkFunWeatherShieldData (GetTimeSeriesData) returns (SparkFunWeatherShieldTimeSeriesData) {}
 }
 
-// --- HELLO ENDPOINT ---
-
-// The request message containing the user's name.
-message HelloRequest {
-    string name = 1;
-}
-
-// The response message containing the greetings
-message HelloReply {
-    string message = 1;
-}
-
-// --- POLLING ENDPOINT ---
+// --- COMMON ---
 
 message GetTimeSeriesData {}
+
+// --- SPARKFUN WEATHER SHEILD POLLING ENDPOINT ---
 
 message SparkFunWeatherShieldTimeSeriesData {
     bool status = 1;

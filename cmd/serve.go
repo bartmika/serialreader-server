@@ -21,7 +21,7 @@ func init() {
 	serveCmd.MarkFlagRequired("arduino_path")
 
 	// The following are optional and will have defaults placed when missing.
-	serveCmd.Flags().IntVarP(&port, "port", "p", 50051, "The port to run this server on")
+	serveCmd.Flags().IntVarP(&port, "port", "p", 50052, "The port to run this server on")
 
 	// Make this sub-command part of our application.
 	rootCmd.AddCommand(serveCmd)
