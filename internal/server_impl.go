@@ -2,7 +2,6 @@ package internal
 
 import (
 	"context"
-	"log"
 
 	"github.com/golang/protobuf/ptypes"
 
