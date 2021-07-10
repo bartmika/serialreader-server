@@ -66,19 +66,19 @@ type SparkFunWeatherShieldTimeSeriesData struct {
 
 	Status                 bool                 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 	Timestamp              *timestamp.Timestamp `protobuf:"bytes,2,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
-	HumidityValue          float64              `protobuf:"fixed32,3,opt,name=humidityValue,proto3" json:"humidityValue,omitempty"`
+	HumidityValue          float32              `protobuf:"fixed32,3,opt,name=humidityValue,proto3" json:"humidityValue,omitempty"`
 	HumidityUnit           string               `protobuf:"bytes,4,opt,name=humidityUnit,proto3" json:"humidityUnit,omitempty"`
-	TemperatureValue       float64              `protobuf:"fixed32,5,opt,name=temperatureValue,proto3" json:"temperatureValue,omitempty"`
+	TemperatureValue       float32              `protobuf:"fixed32,5,opt,name=temperatureValue,proto3" json:"temperatureValue,omitempty"`
 	TemperatureUnit        string               `protobuf:"bytes,6,opt,name=temperatureUnit,proto3" json:"temperatureUnit,omitempty"`
-	PressureValue          float64              `protobuf:"fixed32,7,opt,name=pressureValue,proto3" json:"pressureValue,omitempty"`
+	PressureValue          float32              `protobuf:"fixed32,7,opt,name=pressureValue,proto3" json:"pressureValue,omitempty"`
 	PressureUnit           string               `protobuf:"bytes,8,opt,name=pressureUnit,proto3" json:"pressureUnit,omitempty"`
-	TemperatureBackupValue float64              `protobuf:"fixed32,9,opt,name=temperatureBackupValue,proto3" json:"temperatureBackupValue,omitempty"`
+	TemperatureBackupValue float32              `protobuf:"fixed32,9,opt,name=temperatureBackupValue,proto3" json:"temperatureBackupValue,omitempty"`
 	TemperatureBackupUnit  string               `protobuf:"bytes,10,opt,name=temperatureBackupUnit,proto3" json:"temperatureBackupUnit,omitempty"`
-	AltitudeValue          float64              `protobuf:"fixed32,11,opt,name=altitudeValue,proto3" json:"altitudeValue,omitempty"`
+	AltitudeValue          float32              `protobuf:"fixed32,11,opt,name=altitudeValue,proto3" json:"altitudeValue,omitempty"`
 	AltitudeUnit           string               `protobuf:"bytes,12,opt,name=altitudeUnit,proto3" json:"altitudeUnit,omitempty"`
-	IlluminanceValue       float64              `protobuf:"fixed32,13,opt,name=illuminanceValue,proto3" json:"illuminanceValue,omitempty"`
+	IlluminanceValue       float32              `protobuf:"fixed32,13,opt,name=illuminanceValue,proto3" json:"illuminanceValue,omitempty"`
 	IlluminanceUnit        string               `protobuf:"bytes,14,opt,name=illuminanceUnit,proto3" json:"illuminanceUnit,omitempty"`
-	SoilMoistureValue      float64              `protobuf:"fixed32,15,opt,name=soilMoistureValue,proto3" json:"soilMoistureValue,omitempty"`
+	SoilMoistureValue      float32              `protobuf:"fixed32,15,opt,name=soilMoistureValue,proto3" json:"soilMoistureValue,omitempty"`
 	SoilMoistureUnit       string               `protobuf:"bytes,16,opt,name=soilMoistureUnit,proto3" json:"soilMoistureUnit,omitempty"`
 }
 
@@ -128,7 +128,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetTimestamp() *timestamp.Timestam
 	return nil
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetHumidityValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetHumidityValue() float32 {
 	if x != nil {
 		return x.HumidityValue
 	}
@@ -142,7 +142,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetHumidityUnit() string {
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureValue() float32 {
 	if x != nil {
 		return x.TemperatureValue
 	}
@@ -156,7 +156,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureUnit() string {
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetPressureValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetPressureValue() float32 {
 	if x != nil {
 		return x.PressureValue
 	}
@@ -170,7 +170,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetPressureUnit() string {
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureBackupValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureBackupValue() float32 {
 	if x != nil {
 		return x.TemperatureBackupValue
 	}
@@ -184,7 +184,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetTemperatureBackupUnit() string 
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetAltitudeValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetAltitudeValue() float32 {
 	if x != nil {
 		return x.AltitudeValue
 	}
@@ -198,7 +198,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetAltitudeUnit() string {
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetIlluminanceValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetIlluminanceValue() float32 {
 	if x != nil {
 		return x.IlluminanceValue
 	}
@@ -212,7 +212,7 @@ func (x *SparkFunWeatherShieldTimeSeriesData) GetIlluminanceUnit() string {
 	return ""
 }
 
-func (x *SparkFunWeatherShieldTimeSeriesData) GetSoilMoistureValue() float64 {
+func (x *SparkFunWeatherShieldTimeSeriesData) GetSoilMoistureValue() float32 {
 	if x != nil {
 		return x.SoilMoistureValue
 	}

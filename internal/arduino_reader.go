@@ -13,21 +13,24 @@ const RX_BYTE = "1"
 
 // The time-series data structure used to store all the data that will be
 // returned by the `SparkFun Weather Shield` Arduino device.
-type TimeSeriesData struct {
+//
+// Please note that the value fields must be float32 as this was specified by
+// the hardware manufacturar, if you use float64 you will get an error.
+type SparkFunWeatherShieldTimeSeriesData struct {
 	Status                     string  `json:"status,omitempty"`
 	Runtime                    int     `json:"runtime,omitempty"`
 	Id                         int     `json:"id,omitempty"`
-	HumidityValue              float64 `json:"humidity_value,omitempty"`
+	HumidityValue              float32 `json:"humidity_value,omitempty"`
 	HumidityUnit               string  `json:"humidity_unit,omitempty"`
-	TemperatureValue           float64 `json:"temperature_primary_value,omitempty"`
+	TemperatureValue           float32 `json:"temperature_primary_value,omitempty"`
 	TemperatureUnit            string  `json:"temperature_primary_unit,omitempty"`
-	PressureValue              float64 `json:"pressure_value,omitempty"`
+	PressureValue              float32 `json:"pressure_value,omitempty"`
 	PressureUnit               string  `json:"pressure_unit,omitempty"`
-	TemperatureBackupValue     float64 `json:"temperature_secondary_value,omitempty"`
+	TemperatureBackupValue     float32 `json:"temperature_secondary_value,omitempty"`
 	TemperatureBackupUnit      string  `json:"temperature_secondary_unit,omitempty"`
-	AltitudeValue              float64 `json:"altitude_value,omitempty"`
+	AltitudeValue              float32 `json:"altitude_value,omitempty"`
 	AltitudeUnit               string  `json:"altitude_unit,omitempty"`
-	IlluminanceValue           float64 `json:"illuminance_value,omitempty"`
+	IlluminanceValue           float32 `json:"illuminance_value,omitempty"`
 	IlluminanceUnit            string  `json:"illuminance_unit,omitempty"`
 	Timestamp                  int64   `json:"timestamp,omitempty"`
 }
@@ -61,7 +64,7 @@ func NewArduinoReader(devicePath string) *ArduinoReader {
 
 // Function returns the JSON data of the instrument readings from our Arduino
 // device configured for the `SparkFun Weather Shield` settings.
-func (ar *ArduinoReader) GetSparkFunWeatherShieldData() *TimeSeriesData {
+func (ar *ArduinoReader) GetSparkFunWeatherShieldData() *SparkFunWeatherShieldTimeSeriesData {
 	// DEVELOPERS NOTE:
 	// (1) The external device (Arduino) is setup to standby idle until it
 	//     receives a poll request from this code, once a poll request has
@@ -100,7 +103,7 @@ func (ar *ArduinoReader) GetSparkFunWeatherShieldData() *TimeSeriesData {
 	// STEP 3:
 	// Check to see if ANY data was returned from the external device, if
 	// there was then we load up the string into a JSON object.
-	var tsd TimeSeriesData
+	var tsd SparkFunWeatherShieldTimeSeriesData
 	err = json.Unmarshal(buf[:n], &tsd)
 	if err != nil {
 		return nil
@@ -110,7 +113,7 @@ func (ar *ArduinoReader) GetSparkFunWeatherShieldData() *TimeSeriesData {
 }
 
 // Function used to print to the console the time series data.
-func PrettyPrintTimeSeriesData(tsd *TimeSeriesData) {
+func PrettyPrintTimeSeriesData(tsd *SparkFunWeatherShieldTimeSeriesData) {
 	fmt.Println("Status: ", tsd.Status)
 	fmt.Println("Runtime: ", tsd.Runtime)
 	fmt.Println("Status: ", tsd.Id)
