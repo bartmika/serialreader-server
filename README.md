@@ -32,13 +32,44 @@ You must have the following installed before proceeding. If you are missing any 
     GO111MODULE=on go get -u github.com/bartmika/serialreader-server
     ```
 
-4. Run our application.
+## Usage
+Run our application.
 
-    ```
-    serialreader-server --port=50052 --arduinoDevicePath="/dev/cu.usbmodem14201"
-    ```
+```bash
+serialreader-server --port=50052 --arduinoDevicePath="/dev/cu.usbmodem14201"
+```
 
-5. If you see a message saying ``gRPC server is running.`` then the application has been successfully started.
+If you see a message saying ``gRPC server is running.`` then the application has been successfully started.
+
+## How does it work?
+This device runs continuously waiting for you to pull data from it.
+
+When you pull data, it will send you a JSON formatted object with all the time series data.
+
+To pull data, you must first connect to the **Arduino device** with a USB cable.
+
+Once connected, you use **serial usb communication** to read data from the device and write commands to the device.
+
+Once your device recieves the JSON data, you do what you want with the data.
+
+## Why did you choose Arduino?
+The Arduino platform has a wonderful ecosystem of open-source hardware with libraries. Our goal is to take advantage of the libraries the hardware manufacturers wrote and not worry about the complicated implementation details.
+
+## How does the data output look like?
+When the device is ready to be used, you will see this output:
+
+```json
+{"status":"READY","runtime":2,"id":1,"sensors":["humidity","temperature","pressure","illuminance","soil"]}
+```
+
+When you poll the device for data, you will see this output:
+
+```json
+{"status":"RUNNING","runtime":24771,"id":2,"humidity":{"value":47.92456,"unit":"%","status":1,"error":""},"temperature_primary":{"value":80.47031,"unit":"F","status":1,"error":""},"pressure":{"value":0,"unit":"Pa","status":1,"error":""},"temperature_secondary":{"value":78.2375,"unit":"F","status":1,"error":""},"altitude":{"value":80440.25,"unit":"ft","status":1,"error":""},"illuminance":{"value":0.040305,"unit":"V","status":1,"error":""}}
+```
+
+## Why should I use it?
+This code is a easy to connect and read realtime time-series data using any language that supports serial communication over USB.
 
 ## License
 
