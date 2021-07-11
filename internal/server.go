@@ -11,18 +11,18 @@ import (
 )
 
 type SerialReaderServer struct {
-	port               int
-	arduinoDevicePath  string
-	arduinoReader             *ArduinoReader
-	grpcServer         *grpc.Server
+	port              int
+	arduinoDevicePath string
+	arduinoReader     *ArduinoReader
+	grpcServer        *grpc.Server
 }
 
 func New(arduinoDevicePath string, port int) *SerialReaderServer {
 	return &SerialReaderServer{
-		port:               port,
-		arduinoDevicePath:  arduinoDevicePath,
-		arduinoReader:             nil,
-		grpcServer:         nil,
+		port:              port,
+		arduinoDevicePath: arduinoDevicePath,
+		arduinoReader:     nil,
+		grpcServer:        nil,
 	}
 }
 

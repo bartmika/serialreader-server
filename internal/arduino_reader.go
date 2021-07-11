@@ -1,8 +1,8 @@
 package internal
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"log"
 	"time"
 
@@ -17,22 +17,22 @@ const RX_BYTE = "1"
 // Please note that the value fields must be float32 as this was specified by
 // the hardware manufacturar, if you use float64 you will get an error.
 type SparkFunWeatherShieldTimeSeriesData struct {
-	Status                     string  `json:"status,omitempty"`
-	Runtime                    int     `json:"runtime,omitempty"`
-	Id                         int     `json:"id,omitempty"`
-	HumidityValue              float32 `json:"humidity_value,omitempty"`
-	HumidityUnit               string  `json:"humidity_unit,omitempty"`
-	TemperatureValue           float32 `json:"temperature_primary_value,omitempty"`
-	TemperatureUnit            string  `json:"temperature_primary_unit,omitempty"`
-	PressureValue              float32 `json:"pressure_value,omitempty"`
-	PressureUnit               string  `json:"pressure_unit,omitempty"`
-	TemperatureBackupValue     float32 `json:"temperature_secondary_value,omitempty"`
-	TemperatureBackupUnit      string  `json:"temperature_secondary_unit,omitempty"`
-	AltitudeValue              float32 `json:"altitude_value,omitempty"`
-	AltitudeUnit               string  `json:"altitude_unit,omitempty"`
-	IlluminanceValue           float32 `json:"illuminance_value,omitempty"`
-	IlluminanceUnit            string  `json:"illuminance_unit,omitempty"`
-	Timestamp                  int64   `json:"timestamp,omitempty"`
+	Status                 string  `json:"status,omitempty"`
+	Runtime                int     `json:"runtime,omitempty"`
+	Id                     int     `json:"id,omitempty"`
+	HumidityValue          float32 `json:"humidity_value,omitempty"`
+	HumidityUnit           string  `json:"humidity_unit,omitempty"`
+	TemperatureValue       float32 `json:"temperature_primary_value,omitempty"`
+	TemperatureUnit        string  `json:"temperature_primary_unit,omitempty"`
+	PressureValue          float32 `json:"pressure_value,omitempty"`
+	PressureUnit           string  `json:"pressure_unit,omitempty"`
+	TemperatureBackupValue float32 `json:"temperature_secondary_value,omitempty"`
+	TemperatureBackupUnit  string  `json:"temperature_secondary_unit,omitempty"`
+	AltitudeValue          float32 `json:"altitude_value,omitempty"`
+	AltitudeUnit           string  `json:"altitude_unit,omitempty"`
+	IlluminanceValue       float32 `json:"illuminance_value,omitempty"`
+	IlluminanceUnit        string  `json:"illuminance_unit,omitempty"`
+	Timestamp              int64   `json:"timestamp,omitempty"`
 }
 
 // The abstraction of the `SparkFun Weather Shield` reader.

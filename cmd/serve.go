@@ -11,8 +11,8 @@ import (
 )
 
 var (
-	port                     int
-	arduinoDevicePath        string
+	port              int
+	arduinoDevicePath string
 )
 
 func init() {
