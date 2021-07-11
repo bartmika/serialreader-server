@@ -4,13 +4,15 @@
 
 The purpose of this application is to provide a remote procedure call (gRPC) interface over an external Arduino device with a [SparkFun Weather Shield (DEV-13956)](https://github.com/sparkfun/Weather_Shield).
 
-Supports collection of multiple time-series data from 6 different sensors:
+Supports collection of multiple time-series data from 6 different sensors and the following features:
 
 * Temperature
 * Humidity
 * Pressure
 * Altitude
 * Illuminance
+* Supports `JSON` formatted outputs
+* Powered by open-source hardware and software!
 
 ## Prerequisites
 
